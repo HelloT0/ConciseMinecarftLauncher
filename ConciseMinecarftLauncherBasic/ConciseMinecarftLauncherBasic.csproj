@@ -48,4 +48,36 @@
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <AndroidResource Remove="Resources\Images\AppIcons\**" />
+	  <Compile Remove="Resources\Images\AppIcons\**" />
+	  <EmbeddedResource Remove="Resources\Images\AppIcons\**" />
+	  <MauiCss Remove="Resources\Images\AppIcons\**" />
+	  <MauiImage Remove="Resources\Images\AppIcons\**" />
+	  <MauiXaml Remove="Resources\Images\AppIcons\**" />
+	  <None Remove="Resources\Images\AppIcons\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Models\Downloads\DownloadGame.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Models\Downloads\DownloadMod.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Models\Downloads\InstallingGame.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Models\Downloads\LocalInstallGame.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Models\Downloads\MyDownloads.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
