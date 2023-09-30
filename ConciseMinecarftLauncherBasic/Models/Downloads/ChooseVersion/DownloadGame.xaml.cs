@@ -10,11 +10,14 @@ public partial class DownloadGame : ContentPage
     public DownloadGame()
 	{
 		InitializeComponent();
-	}
-
+    }
     public void ChangeList(object sender, CheckedChangedEventArgs e)
     {
-        GetGameVersion getGameVersion = new();
-        //getGameVersion.FxiGameJson();
+    }
+
+    private async void RefreshVersion(object sender, EventArgs e)
+    {
+        GetGameVersion getGameVersion = new GetGameVersion();
+        await getGameVersion.GetVersionJson(); 
     }
 }

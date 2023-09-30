@@ -63,7 +63,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Models\Downloads\DownloadGame.xaml">
+	  <MauiXaml Update="Models\Downloads\ChooseVersion\ChooseGame.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Models\Downloads\ChooseVersion\DownloadGame.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Models\Downloads\DownloadMod.xaml">
