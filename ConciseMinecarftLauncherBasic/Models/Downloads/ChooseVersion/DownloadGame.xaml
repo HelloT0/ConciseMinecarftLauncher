@@ -9,7 +9,7 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0">
-            <Button Text="请选择你要安装的游戏版本 "/>
+            <Button Text="请选择你要安装的游戏版本 " Clicked="ChooseGameVersion"/>
             <StackLayout Orientation="Horizontal" Spacing="10">
                 <CheckBox IsChecked="{Binding showRelease}"
                       CheckedChanged="ChangeList"/>

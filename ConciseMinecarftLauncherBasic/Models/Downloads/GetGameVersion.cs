@@ -40,6 +40,8 @@ class GetGameVersion
     }
     public async Task FixGamesJson()
     {
+        AllGame.Clear();
+        AllShowGameVersions.Clear();
         JObject data = JsonConvert.DeserializeObject<JObject>(AllGameVersionsJson);
         JArray versionsArray = data["version"] as JArray;
         bool passtheR = true;

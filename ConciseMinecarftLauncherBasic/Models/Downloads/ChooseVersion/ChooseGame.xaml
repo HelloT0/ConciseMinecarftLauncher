@@ -2,11 +2,23 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ConciseMinecarftLauncherBasic.Models.Downloads.ChooseVersion.ChooseGame"
-             Title="选择你的游戏版本">
+             xmlns:download="clr-namespace:ConciseMinecarftLauncherBasic.Models.Downloads.ChooseVersion"
+             x:DataType="download:ChooseGame"
+             Title="选择你的游戏内核版本">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <StackLayout>
+            <Label Text="当前选择的游戏内核：" FontSize="Title"/>
+            <ScrollView>
+                <CarouselView x:Name="ChoooseVersion" ItemsSource="{Binding Versionitems}">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                
+                            </StackLayout>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </ScrollView>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>

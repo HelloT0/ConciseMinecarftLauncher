@@ -1,3 +1,4 @@
+using ConciseMinecarftLauncherBasic.Models.Downloads.ChooseVersion;
 using Newtonsoft.Json;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -20,4 +21,9 @@ public partial class DownloadGame : ContentPage
         GetGameVersion getGameVersion = new GetGameVersion();
         await getGameVersion.GetVersionJson(); 
     }
+    private async void ChooseGameVersion(object sender, EventArgs e) 
+    {
+        Navigation.PushAsync(new ChooseGame());
+    }
+
 }
