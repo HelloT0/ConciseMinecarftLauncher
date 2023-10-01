@@ -9,8 +9,38 @@
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0">
-            <Button Text="请选择你要安装的游戏版本 " Clicked="ChooseGameVersion"/>
+            <!--选择游戏内核版本 -->
+            <Label Text="选择你的游戏内核版本 " FontSize="Title"/>
+            <Entry Placeholder="搜索你想要安装的版本 "  HorizontalOptions="Center"/>
             <StackLayout Orientation="Horizontal" Spacing="10">
+                <Grid ColumnDefinitions=".50*,.50*">
+                    <ScrollView>
+                        <CollectionView ItemsSource="{Binding ShowGame}"
+                             SelectedItem="{Binding SelectGameItem}" SelectionChanged="SelectGameVer">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Vertical" />
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <Image Source="{Binding ShowGameIcon}"/>
+                                        <Label Text="{Binding ShowGameID}" FontSize="Title"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding ShowGameInfo}"/>
+                                            <Label Text="{Binding ShowGameReleaseTime,
+                                            StringFormat='，发布于 {0}'}"/>
+                                        </StackLayout>
+                                        <Button Text="选择" Clicked="ChooseGame"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </ScrollView>
+                    <StackLayout>
+                        <Image Source="{Binding selGamrIcon}"/>
+                        <Label Text="{Binding selGamrInfo}"/>
+                    </StackLayout>
+                </Grid>
                 <CheckBox IsChecked="{Binding showRelease}"
                       CheckedChanged="ChangeList"/>
                 <Label Text="正式版" VerticalOptions="Center"/>
@@ -24,6 +54,10 @@
                 <Label Text="愚人节版本 " VerticalOptions="Center"/>
                 <Button Text="刷新" Clicked="RefreshVersion" WidthRequest="100" HorizontalOptions="End"/>
             </StackLayout>
+
+            <Label Text="选择你的模组加载器 " FontSize="Title"/>
+            <!--选择Fabric版本 -->
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
