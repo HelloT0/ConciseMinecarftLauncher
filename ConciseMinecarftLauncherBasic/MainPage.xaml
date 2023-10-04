@@ -1,14 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ConciseMinecarftLauncherBasic.MainPage"
-             xmlns:conciseminecarftlauncherbasic="clr-namespace:ConciseMinecarftLauncherBasic"
-             x:DataType="conciseminecarftlauncherbasic:MainPage"
-             Title="{Binding HomePageTitle}">
+             x:Class="ConciseMinecarftLauncherBasic.MainPage">
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="5"
+            Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
@@ -30,31 +27,14 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
-            
-            <!--下载页面按钮-->
-
-            <Label Text="下载" FontSize="Title"/>
 
             <Button
-                x:Name="DownGamePage"
-                Text="下载游戏"
-                Clicked="GoToDGame"
-                HorizontalOptions="FillAndExpand"/>
-            <Button
-                x:Name="DownMods"
-                Text="下载模组"
-                Clicked="GoToDMod"
-                HorizontalOptions="FillAndExpand" />
-            <Button
-                x:Name="InstallingGame"
-                Text="查看我正在安装的游戏"
-                Clicked="GoToInstalingPage"
-                HorizontalOptions="FillAndExpand" />
-            <Button
-                    x:Name="Downloading"
-                    Text="查看我正在下载什么"
-                    Clicked="LookMyDownload"
-                    HorizontalOptions="FillAndExpand" />
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
         </VerticalStackLayout>
     </ScrollView>
 
