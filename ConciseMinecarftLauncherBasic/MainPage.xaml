@@ -4,11 +4,7 @@
              x:Class="ConciseMinecarftLauncherBasic.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
+        <StackLayout>
             <Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
@@ -35,7 +31,13 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-        </VerticalStackLayout>
+
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="100,Auto,200">
+                <Button Text="下载游戏&#xA;从 Internet 上下载并安装新的游戏 "
+                        Clicked="ToDownGame" Grid.RowSpan="2"
+                        Grid.ColumnSpan="3"/>
+            </Grid>
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>

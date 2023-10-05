@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ConciseMinecarftLauncherBasic.ViewModels.DownloadandInstall.DownloadGame"
+             xmlns:data="clr-namespace:ConciseMinecarftLauncherBasic.Models.DownloadandInstall"
+             x:DataType="data:GetGameVersion"
+             Title="下载并安装游戏">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <Label Text="选择游戏内核 " FontSize="18"/>
+            <Frame MaximumHeightRequest="{Binding ChooseGameFramHeig}" CornerRadius="10" HasShadow="True"
+                   x:Name="ChooseOrGame" Padding="0">
+                <Grid RowDefinitions="35,4,Auto" ColumnDefinitions=".65*,4,.35*" Padding="10">
+                    <Button BackgroundColor="Transparent" Padding="0" Grid.ColumnSpan="3"
+                            Text="选择你的 Minecraft 内核版本 " TextColor="Blue"
+                            FontSize="18" BorderWidth="0"/>
+                    <BoxView HeightRequest="2" Grid.Row="1" Grid.ColumnSpan="3"/>
+                    <BoxView Grid.Row="2" Grid.Column="1" WidthRequest="2"/>
+                    <CollectionView x:Name="ChooseYourGame"
+                                    ItemsSource="{Binding OriginalGameVersionList}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="70,Auto">
+                                    
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

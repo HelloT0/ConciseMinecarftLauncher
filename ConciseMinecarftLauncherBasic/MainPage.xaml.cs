@@ -1,4 +1,6 @@
-﻿namespace ConciseMinecarftLauncherBasic;
+﻿using ConciseMinecarftLauncherBasic.ViewModels.DownloadandInstall;
+
+namespace ConciseMinecarftLauncherBasic;
 
 public partial class MainPage : ContentPage
 {
@@ -19,6 +21,10 @@ public partial class MainPage : ContentPage
 			CounterBtn.Text = $"Clicked {count} times";
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
+	}
+	private async void ToDownGame(object sender,EventArgs e)
+	{
+		await Navigation.PushAsync(new DownloadGame());
 	}
 }
 
