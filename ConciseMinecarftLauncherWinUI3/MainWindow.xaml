@@ -54,9 +54,10 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1" x:Name="barsGrid">
                         <Grid.RowDefinitions>
-                            <RowDefinition x:Name="bar_1" Height="0"/>
+                            <RowDefinition Height="0"/>
                         </Grid.RowDefinitions>
-                            <NavigationView PaneDisplayMode="Top"
+                            <NavigationView x:Name="dowBarNav"
+                                            PaneDisplayMode="Top"
                                             IsBackButtonVisible="Collapsed"
                                             IsSettingsVisible="False"
                                             SelectionChanged="NaV1_SelectionChanged">

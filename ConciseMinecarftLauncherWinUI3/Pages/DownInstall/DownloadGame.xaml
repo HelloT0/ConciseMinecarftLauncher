@@ -9,7 +9,8 @@
     mc:Ignorable="d"
     Loading="Page_Loading">
 
-    <Grid>
-        <TextBlock Text="Hello!" FontSize="72"/>
-    </Grid>
+    <StackPanel>
+        <TextBlock Text="下载并安装游戏" FontSize="20"/>
+        <Button Click="Button_Click"/>
+    </StackPanel>
 </Page>

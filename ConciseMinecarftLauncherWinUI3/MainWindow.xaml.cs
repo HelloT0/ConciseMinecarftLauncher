@@ -1,6 +1,8 @@
 using ConciseMinecarftLauncherWinUI3.Pages.DownInstall;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Controls.Primitives;
+using System.Collections.Generic;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -96,16 +98,5 @@ namespace ConciseMinecarftLauncherWinUI3
             }
         }
 
-        public void closeNavBar()
-        {
-            conGrid.RowDefinitions[1].Height = new GridLength(0);
-            barsGrid.RowDefinitions[0].Height = new GridLength(0);
-        }
-        
-        public void OpenDownBar()
-        {
-            conGrid.RowDefinitions[1].Height = new GridLength(60);
-            barsGrid.RowDefinitions[0].Height = new GridLength(60);
-        }
     }
 }
