@@ -6,22 +6,73 @@
     xmlns:local="using:ConciseMinecarftLauncherWinUI3"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    SizeChanged="Window_SizeChanged">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <NavigationView PaneDisplayMode="Auto"
-             SelectionChanged="NavigationView_SelectionChanged">
-            <NavigationView.MenuItems>
-                <NavigationViewItem Content="主页"/>
-                <NavigationViewItem Content="启动"/>
-                <NavigationViewItem Content="下载"/>
-            </NavigationView.MenuItems>
-        </NavigationView>
-        
-        <Frame x:Name="showPages" Grid.Column="1"/>
-
+        <Button
+            Width="40"
+            Height="40"
+            Click="GoBackButton_Click"/>
+        <Button
+            x:Name="showListV"
+            Grid.Column="1"
+            Click="OpeClo_basicSp"
+            Width="40"
+            Height="40"></Button>
+        <SplitView
+            x:Name="basicSplit"
+            DisplayMode="Overlay"
+            IsPaneOpen="True"
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            OpenPaneLength="250">
+            <SplitView.Pane>
+                <ListView SelectionChanged="ToPages" x:Name="navListView">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Home" FontSize="15"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Download" FontSize="15"/>
+                    </StackPanel>
+                </ListView>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid x:Name="conGrid">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1" x:Name="barsGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition x:Name="bar_1" Height="0"/>
+                        </Grid.RowDefinitions>
+                            <NavigationView PaneDisplayMode="Top"
+                                            IsBackButtonVisible="Collapsed"
+                                            IsSettingsVisible="False"
+                                            SelectionChanged="NaV1_SelectionChanged">
+                                <NavigationView.MenuItems>
+                                    <NavigationViewItem Content="下载游戏"/>
+                                    <NavigationViewItem Content="本地安装游戏"/>
+                                    <NavigationViewItem Content="下载模组"/>
+                                    <NavigationViewItem Content="查看正在下载的任务"/>
+                            </NavigationView.MenuItems>
+                            </NavigationView>
+                    </Grid>
+                    <Frame
+                        x:Name="showPage"
+                        Grid.Row="2"/>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Window>

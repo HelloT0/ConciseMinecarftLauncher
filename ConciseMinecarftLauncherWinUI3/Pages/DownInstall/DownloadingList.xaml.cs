@@ -21,11 +21,17 @@ namespace ConciseMinecarftLauncherWinUI3.Pages.DownInstall
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class InstallingObject : Page
+    public sealed partial class DownloadingList : Page
     {
-        public InstallingObject()
+        public DownloadingList()
         {
             this.InitializeComponent();
+        }
+
+        private void Page_Loading(FrameworkElement sender, object args)
+        {
+            MainWindow mainWindow = new();
+            mainWindow.OpenDownBar();
         }
     }
 }

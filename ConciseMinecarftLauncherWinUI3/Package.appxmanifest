@@ -8,11 +8,11 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="22243c83-867d-45d7-b5a0-c1ac40376f6d"
+    Name="8f717064-f308-45f1-b9a5-229170c268ce"
     Publisher="CN=Hello"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="22243c83-867d-45d7-b5a0-c1ac40376f6d" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="8f717064-f308-45f1-b9a5-229170c268ce" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>ConciseMinecarftLauncherWinUI3</DisplayName>

@@ -1,19 +1,6 @@
 using ConciseMinecarftLauncherWinUI3.Pages.DownInstall;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.ApplicationSettings;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -28,34 +15,97 @@ namespace ConciseMinecarftLauncherWinUI3
         public MainWindow()
         {
             this.InitializeComponent();
+            showPage.Navigate(typeof(HomePage));
         }
-        public int FrameControl { get; set; }
-        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+
+        private void OpeClo_basicSp(object sender, RoutedEventArgs e)
         {
-            
-            if (args.IsSettingsSelected)
+            if(basicSplit.IsPaneOpen)
             {
-                // 导航到设置页面
-                //contentFrame.Navigate(typeof(SettingsPage));
+                basicSplit.IsPaneOpen = false;
             }
             else
             {
-                NavigationViewItem item = args.SelectedItem as NavigationViewItem;
+                basicSplit.IsPaneOpen = true;
+            }
+        }
 
-                switch (item.Content.ToString())
+        private void ToPages(object sender, SelectionChangedEventArgs e)
+        {
+            int selectedIndex = navListView.SelectedIndex;
+            // 根据所选项目的索引执行不同的操作
+            switch (selectedIndex)
+            {
+                case 0:
+                    showPage.Navigate(typeof(HomePage));
+                    conGrid.RowDefinitions[1].Height = new GridLength(0);
+                    break;
+                case 1:
+                    conGrid.RowDefinitions[1].Height = new GridLength(60);
+                    barsGrid.RowDefinitions[0].Height = new GridLength(60);
+                    showPage.Navigate(typeof(DownloadGame));
+                    break;
+            }
+        }
+
+        private void Window_SizeChanged(object sender, WindowSizeChangedEventArgs args)
+        {
+            double windowWidth = args.Size.Width;
+            if (windowWidth >= 750)
+            {
+                basicSplit.DisplayMode = SplitViewDisplayMode.Inline;
+                basicSplit.IsPaneOpen = true;
+                showListV.Height = 0;
+            }
+            else
+            {
+                showListV.Height = 40;
+                basicSplit.DisplayMode = SplitViewDisplayMode.Overlay;
+            }
+        }
+
+        private void NaV1_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            if (args.SelectedItem is NavigationViewItem selectedItem)
+            {
+                int selectedIndex = sender.MenuItems.IndexOf(selectedItem);
+                // 根据索引值进行不同的操作
+                switch (selectedIndex)
                 {
-                    case "主页":
-                        // 导航到主页
-                        showPages.Navigate(typeof(HomePage));
-                        FrameControl = 1;
+                    case 0:
+                        showPage.Navigate(typeof(DownloadGame));
                         break;
-                    case "下载":
-                        
-                        showPages.Navigate(typeof(DownBasic));
-                        FrameControl = 2;
+                    case 1:
+                        // 处理选中了索引为 1 的情况
+                        break;
+                    case 2:
+                        // 处理选中了索引为 2 的情况
+                        break;
+                    case 3:
+                        showPage.Navigate(typeof(DownloadingList));
                         break;
                 }
             }
+        }
+
+        private void GoBackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (showPage.CanGoBack)
+            {
+                showPage.GoBack();
+            }
+        }
+
+        public void closeNavBar()
+        {
+            conGrid.RowDefinitions[1].Height = new GridLength(0);
+            barsGrid.RowDefinitions[0].Height = new GridLength(0);
+        }
+        
+        public void OpenDownBar()
+        {
+            conGrid.RowDefinitions[1].Height = new GridLength(60);
+            barsGrid.RowDefinitions[0].Height = new GridLength(60);
         }
     }
 }

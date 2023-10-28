@@ -27,5 +27,11 @@ namespace ConciseMinecarftLauncherWinUI3
         {
             this.InitializeComponent();
         }
+
+        private void Page_Loading(FrameworkElement sender, object args)
+        {
+            MainWindow mainWindow = new();
+            mainWindow.closeNavBar();
+        }
     }
 }

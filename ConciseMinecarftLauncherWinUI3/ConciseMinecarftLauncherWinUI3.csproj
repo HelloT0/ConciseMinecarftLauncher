@@ -13,12 +13,8 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="HomePage.xaml" />
-    <None Remove="Pages\DownInstall\DownBasic.xaml" />
-    <None Remove="Pages\DownInstall\DownGame.xaml" />
-    <None Remove="Pages\DownInstall\DownloadingObject.xaml" />
-    <None Remove="Pages\DownInstall\DownMod.xaml" />
-    <None Remove="Pages\DownInstall\InstallingObject.xaml" />
-    <None Remove="Pages\DownInstall\LocalInstall.xaml" />
+    <None Remove="Pages\DownInstall\DownloadGame.xaml" />
+    <None Remove="Pages\DownInstall\DownloadingList.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,27 +42,7 @@
     <ProjectCapability Include="Msix" />
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\DownInstall\DownloadingObject.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\DownInstall\InstallingObject.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\DownInstall\DownMod.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\DownInstall\LocalInstall.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Pages\DownInstall\DownBasic.xaml">
+    <Page Update="Pages\DownInstall\DownloadingList.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
@@ -76,7 +52,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Pages\DownInstall\DownGame.xaml">
+    <Page Update="Pages\DownInstall\DownloadGame.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
