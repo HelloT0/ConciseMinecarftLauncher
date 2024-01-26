@@ -8,15 +8,15 @@
   IgnorableNamespaces="uap rescap">
 
   <Identity
-    Name="8f717064-f308-45f1-b9a5-229170c268ce"
-    Publisher="CN=Hello"
+    Name="29ade9b8-d6de-483f-a13b-47765f823ff4"
+    Publisher="CN=New"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="8f717064-f308-45f1-b9a5-229170c268ce" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="29ade9b8-d6de-483f-a13b-47765f823ff4" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ConciseMinecarftLauncherWinUI3</DisplayName>
-    <PublisherDisplayName>Hello</PublisherDisplayName>
+    <DisplayName>ConciseMinecarftLauncherForWindows</DisplayName>
+    <PublisherDisplayName>New</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -34,8 +34,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ConciseMinecarftLauncherWinUI3"
-        Description="ConciseMinecarftLauncherWinUI3"
+        DisplayName="ConciseMinecarftLauncherForWindows"
+        Description="ConciseMinecarftLauncherForWindows"
         BackgroundColor="transparent"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png">
