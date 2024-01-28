@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ConciseMinecarftLauncherForWindows (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ConciseMinecarftLauncherForWindows (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

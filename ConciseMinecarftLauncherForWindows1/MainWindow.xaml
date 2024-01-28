@@ -10,21 +10,29 @@
 
     <Grid>
         <NavigationView
-            SelectionChanged="NavigationView_SelectionChanged">
+            x:Name="NavigationView1"
+            SelectionChanged="NavigationView1_SelectionChanged"
+            IsTabStop="False"
+            PaneDisplayMode="Auto"
+            PaneTitle="ConciseMinecarftLauncher"
+            BackRequested="NavigationView1_BackRequested"
+            IsBackEnabled="True">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Home" Tag="Home"/>
-                <NavigationViewItem Content="Play" Tag="Play"/>
-                <NavigationViewItem Content="Downloads Center" Tag="DownCen">
+                <NavigationViewItem Tag="HomePage"  Content="主页"/>
+                <NavigationViewItem Tag="StartToPlay" Content="启动"/>
+                <NavigationViewItem Tag="DownloadsCenterPage" Content="下载">
                     <NavigationViewItem.MenuItems>
-                        <NavigationViewItem Content="Download New Game" Tag="DownGame"/>
-                        <NavigationViewItem Content="Download Mods" Tag="DownMod"/>
+                        <NavigationViewItem Content="下载游戏" Tag="DownloadGamesPage"/>
+                        <NavigationViewItem Content="下载模组" Tag="DownloadModsPage"/>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
             </NavigationView.MenuItems>
             <NavigationView.Content>
                 <Frame
-                    x:Name="AllContent"/>
+                    x:Name="showllAllPages"
+                    Padding="55"/>
             </NavigationView.Content>
         </NavigationView>
     </Grid>
+
 </Window>

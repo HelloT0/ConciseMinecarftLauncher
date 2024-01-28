@@ -1,4 +1,10 @@
-using ConciseMinecarftLauncherForWindows.Pages.Settings;
+/*
+This code file is written in ANSI.
+If you are using UTF-8 or other encoding to open this file, please use ANSI encoding to reopen this file.
+If you see garbled code in this code file, please use ANSI encoding to reopen this file.
+*/
+
+using ConciseMinecarftLauncherForWindows.Pages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -29,26 +35,28 @@ namespace ConciseMinecarftLauncherForWindows
             this.InitializeComponent();
         }
 
-        private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        private void NavigationView1_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
-            /*
-             * Part of the code is borrowed from 
-             * https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ControlPages/NavigationViewPage.xaml.cs
-             */
-            if (args.IsSettingsSelected)
+            if (args.IsSettingsSelected == true)
             {
-                AllContent.Navigate(typeof(SettingsPage));
+                showllAllPages.Navigate(typeof(SettingsPage), args.RecommendedNavigationTransitionInfo);
+                sender.Header = "…Ë÷√";
             }
             else
             {
                 var selectedItem = (Microsoft.UI.Xaml.Controls.NavigationViewItem)args.SelectedItem;
-                string selectedContent = ((string)selectedItem.Content);
-                sender.Header = selectedContent;
-                string selectedTag = ((string)selectedItem.Tag);
-                string pageName = "ConciseMinecarftLauncherForWindows.Pages." + selectedTag+"Page";
+                string selectedItemTag = ((string)selectedItem.Tag);
+                sender.Header = selectedItem.Content;
+                string pageName = "ConciseMinecarftLauncherForWindows.Pages." + selectedItemTag;
                 Type pageType = Type.GetType(pageName);
-                AllContent.Navigate(pageType);
+                showllAllPages.Navigate(pageType);
             }
+        }
+
+        private void NavigationView1_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+            if (showllAllPages.CanGoBack)
+                showllAllPages.GoBack();
         }
     }
 }
