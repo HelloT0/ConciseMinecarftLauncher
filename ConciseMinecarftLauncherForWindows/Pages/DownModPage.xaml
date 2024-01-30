@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Page
-    x:Class="ConciseMinecarftLauncherForWindows.Pages.HomePage"
+    x:Class="ConciseMinecarftLauncherForWindows.Pages.DownModPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ConciseMinecarftLauncherForWindows.Pages"
@@ -9,6 +9,6 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock Text="这里是主页"/>
+
     </Grid>
 </Page>

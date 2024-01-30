@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Window
+    Title="ConciseMinecarftLauncher"
     x:Class="ConciseMinecarftLauncherForWindows.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -10,17 +11,21 @@
 
     <Grid>
         <NavigationView
+            BackRequested="NavigationView_BackRequested"
+            IsBackEnabled="True"
             SelectionChanged="NavigationView_SelectionChanged">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="Home" Tag="Home"/>
-                <NavigationViewItem Content="Play" Tag="Play"/>
-                <NavigationViewItem Content="Downloads Center" Tag="DownCen">
+                <NavigationViewItem Content="Home" Icon="Home" Tag="Home"/>
+                <NavigationViewItem Content="Play" Icon="Play" Tag="Play"/>
+                <NavigationViewItem Content="Downloads Center" Icon="Download" Tag="DownCen">
                     <NavigationViewItem.MenuItems>
                         <NavigationViewItem Content="Download New Game" Tag="DownGame"/>
                         <NavigationViewItem Content="Download Mods" Tag="DownMod"/>
                     </NavigationViewItem.MenuItems>
                 </NavigationViewItem>
+                <NavigationViewItem Content="Account" Icon="Contact" Tag="AccMan"/>
             </NavigationView.MenuItems>
+            
             <NavigationView.Content>
                 <Frame
                     x:Name="AllContent"/>

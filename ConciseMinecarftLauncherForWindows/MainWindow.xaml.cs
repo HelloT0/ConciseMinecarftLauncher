@@ -1,4 +1,4 @@
-using ConciseMinecarftLauncherForWindows.Pages.Settings;
+using ConciseMinecarftLauncherForWindows.Pages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -38,6 +38,7 @@ namespace ConciseMinecarftLauncherForWindows
             if (args.IsSettingsSelected)
             {
                 AllContent.Navigate(typeof(SettingsPage));
+                sender.Header = "Settings";
             }
             else
             {
@@ -48,6 +49,14 @@ namespace ConciseMinecarftLauncherForWindows
                 string pageName = "ConciseMinecarftLauncherForWindows.Pages." + selectedTag+"Page";
                 Type pageType = Type.GetType(pageName);
                 AllContent.Navigate(pageType);
+            }
+        }
+
+        private void NavigationView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+            if (AllContent.CanGoBack)
+            {
+                AllContent.GoBack();
             }
         }
     }
