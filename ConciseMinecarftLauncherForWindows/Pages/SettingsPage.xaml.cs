@@ -39,19 +39,35 @@ namespace ConciseMinecarftLauncherForWindows.Pages
             switch (skin)
             {
                 case "Steven":
+                    //skinGrid.Children.Clear();
+                    
                     break;
                 case "Alex":
+                    skinGrid.Children.Clear();
                     break;
                 case "Online skin":
                     break;
                 case "Offline skin":
-                    TextBlock textBlock1 = new();
-                    textBlock1.Text = "Please choose a picture as your player skin.";
-                    skinchoose.Children.Add(textBlock1);
-                    Button button1 = new();
-                    button1.Content = "Click me to choose a picture.";
+                    skinGrid.Children.Clear();
+                    TextBlock textBlock1 = new()
+                    {
+                        Text = "Please choose a picture as your player skin."
+                    };
+                    Grid.SetRow(textBlock1, 0);
+                    skinGrid.Children.Add(textBlock1);
+                    Button button1 = new()
+                    {
+                        Content = "Click me to choose a picture."
+                    };
                     button1.Click += Button1_Click;
-                    TextBlock textBlock2 = new();
+                    Grid.SetRow(button1, 1);
+                    skinGrid.Children.Add(button1);
+                    TextBlock textBlock2 = new()
+                    {
+                        Text = "File address:"
+                    };
+                    Grid.SetRow(textBlock2, 2);
+                    skinGrid.Children.Add(textBlock2);
                     break;
             }
         }

@@ -10,27 +10,8 @@
 
     <Grid>
         <Pivot>
-            <PivotItem Header="Normal">
-                <Expander>
-                    <Expander.Header>
-                        <StackPanel
-                            Orientation="Horizontal">
-                            <TextBlock Text="Player Skin"/>
-                            <ComboBox
-                                SelectedIndex="0"
-                                SelectionChanged="ComboBox_SelectionChanged">
-                                <x:String>Steven</x:String>
-                                <x:String>Alex</x:String>
-                                <x:String>Online skin</x:String>
-                                <x:String>Offline skin</x:String>
-                            </ComboBox>
-                        </StackPanel>
-                    </Expander.Header>
-                    <Expander.Content>
-                        <StackPanel x:Name="skinchoose"/>
-                        
-                    </Expander.Content>
-                </Expander>
+            <PivotItem Header="Play">
+                
             </PivotItem>
 
             <PivotItem Header="Download">
@@ -81,7 +62,7 @@
                                 <TextBlock
                                     Grid.Column="2"
                                     Grid.RowSpan="2"
-                                    Text="0.1Dev1Debug3"
+                                    Text="0.1Dev1Debug5"
                                     VerticalAlignment="Center"/>
                             </Grid>
                         </Expander.Header>
